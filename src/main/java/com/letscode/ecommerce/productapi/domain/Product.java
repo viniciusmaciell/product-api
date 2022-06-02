@@ -20,7 +20,7 @@ public class Product {
     private String name;
     private String code;
     private String description;
-    private String manufacturer; // TODO -> Mudar para manufacturerId, buscar por id.
+    private String manufacturer;
     private BigDecimal value;
     private LocalDateTime creationDate;
     private LocalDateTime updateDate;

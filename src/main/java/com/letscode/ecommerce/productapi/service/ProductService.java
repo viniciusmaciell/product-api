@@ -30,7 +30,7 @@ public class ProductService {
             log.info("Product saved:" + product);
             return repository.save(product);
         }
-        throw new RuntimeException("Product already exists"); //Todo exception
+        throw new RuntimeException("Product already exists");
     }
 
     public Page<Product> getAll(Pageable pageable) {
@@ -45,7 +45,7 @@ public class ProductService {
 
     public String delete(String id) {
         Optional<Product> productOptional = repository.findById(id);
-        var product = productOptional.orElseThrow(RuntimeException::new); //TODO implementar excessao
+        var product = productOptional.orElseThrow(RuntimeException::new);
         repository.delete(product);
         log.info("Product with id " + id + " successfully deleted.", id);
 
@@ -55,7 +55,7 @@ public class ProductService {
 
     public Product update(String productId, ProductRequest productRequest) {
         Optional<Product> productOptional = repository.findById(productId);
-        var product = productOptional.orElseThrow(RuntimeException::new);//TODO implementar excessao
+        var product = productOptional.orElseThrow(RuntimeException::new);
         Product productEntity = new Product();
 
         BeanUtils.copyProperties(productRequest, productEntity);

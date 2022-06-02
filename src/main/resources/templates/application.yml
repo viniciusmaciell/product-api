@@ -1,0 +1,28 @@
+server:
+  port: 80
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    preferIpAddress: true
+    nonSecurePort: 80
+
+spring:
+  application:
+    name: product-api-instance
+  data:
+    mongodb:
+      database: products
+      port: 27017
+      host: product-mongo
+      
